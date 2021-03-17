@@ -8,8 +8,7 @@ getint = ObjectIdentity('1.3.6.1.2.1.2.2.1.2')
 
 def result_print(snmp_gen):
     for rez in snmp_gen:
-        for s in rez[3]:
-            print(s)
+        for s in rez[3]: print(s)
     print(" ")
 
 
