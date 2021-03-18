@@ -10,6 +10,11 @@ class IPv4RandomNetwork(ipaddress.IPv4Network):
         return self.is_global
     def key_value(self):
         return int(self.prefixlen)*2**32+int(self.network_address)
+    def key_values(self):
+        return (int(self.netmask), int(self.network_address))
+
+def netsort1(n):
+    return n.key_values()
 
 def netsort(n):
     return (int(n.netmask), int(n.network_address))
@@ -26,5 +31,5 @@ n1=IPv4RandomNetwork()
 listnet = gennet(nn)
 #for s in listnet: print(s, end=" ")
 #print(" ")
-listnet.sort(key=netsort)
+listnet.sort(key=netsort1)
 for s in listnet: print(s)
