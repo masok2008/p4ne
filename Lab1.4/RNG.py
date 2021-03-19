@@ -35,4 +35,4 @@ listnet = gennet(nn)
 
 #for s in listnet: print(s, end=" ")
 #for s in sorted(listnet): print(s)
-for s in sorted(listnet, key=netsort1): print(s)
+for s in sorted(listnet, key=lambda x: x.key_values()): print(s)
