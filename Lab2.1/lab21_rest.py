@@ -25,11 +25,11 @@ req = URL + '/api/v1/interfaces'
 r = requests.get(req, headers=header, verify=False)
 pprint.pprint(r.json())
 iface=r.json()
-print(type(iface))
+#print(type(iface))
 ifacelist = []
 for i in iface['items']:
     ifacelist.append(i['if-name'])
-print(ifacelist)
+#print(ifacelist)
 ifstat = dict()
 for i in ifacelist:
     ifstat[i] = dict()
