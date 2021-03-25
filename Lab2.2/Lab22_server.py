@@ -31,6 +31,7 @@ def readconfig():
     hostip = dict()
     files = glob.glob(pathtofiles + "\\*.txt")
     for fn in files:
+        curr_host = "LOST"
         with open(fn) as f:
             for st in f:
                 d = classify(st)
